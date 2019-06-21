@@ -11,10 +11,11 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-between align-items-baseline">
                     <h1>
-                        Name surname
+                        {{$user->name}}
                     </h1>
+                    <a href="#">Add New Post</a>
                 </div>
             </div>
             <div class="row">
@@ -30,17 +31,17 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <b>Farid Talybly | Sport Blogger</b>
+                    <b>{{$user->profile->title}}</b>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span>Goals are only important ,if they win games</span>
+                    <span>{{$user->profile->description}}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#">youtu.be/8L2HNjI0PLs</a>
+                    <a href="#">{{$user->profile->url}}</a>
                 </div>
             </div>
         </div>
