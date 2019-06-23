@@ -15,12 +15,12 @@
                     <h1>
                         {{$user->name}}
                     </h1>
-                    <a href="#">Add New Post</a>
+                    <a href="/p/create">Add New Post</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
-                    <b>15 </b>
+                    <b>{{$user->posts->count()}} </b>
                 </div>
                 <div class="col-3">
                     <b>123</b>
@@ -46,24 +46,14 @@
             </div>
         </div>
     </div>
-    <div class="row pt-5">
-        <div class="imgCont col-4">
-            <img
-            class="w-100"
-            src="https://instagram.fgyd10-1.fna.fbcdn.net/vp/479afc8228020b7a3c89aeccfe6d8435/5DA23D7F/t51.2885-15/sh0.08/e35/c0.180.1440.1440/s640x640/58613112_121018602429748_7577382688467894564_n.jpg?_nc_ht=instagram.fgyd10-1.fna.fbcdn.net" alt="">
-        </div>
-        
-        <div class="imgCont col-4">
-            <img
-            class="w-100"
-            src="https://instagram.fgyd10-1.fna.fbcdn.net/vp/479afc8228020b7a3c89aeccfe6d8435/5DA23D7F/t51.2885-15/sh0.08/e35/c0.180.1440.1440/s640x640/58613112_121018602429748_7577382688467894564_n.jpg?_nc_ht=instagram.fgyd10-1.fna.fbcdn.net" alt="">
-        </div>
-        
-        <div class="imgCont col-4">
-            <img
-            class="w-100"
-            src="https://instagram.fgyd10-1.fna.fbcdn.net/vp/479afc8228020b7a3c89aeccfe6d8435/5DA23D7F/t51.2885-15/sh0.08/e35/c0.180.1440.1440/s640x640/58613112_121018602429748_7577382688467894564_n.jpg?_nc_ht=instagram.fgyd10-1.fna.fbcdn.net" alt="">
-        </div>
+    <div class="row pt-5 pb-5">
+        @foreach ($user->posts as $post)
+            <div class="imgCont col-4 pb-4">
+                <img
+                    class="w-100"
+                    src="{{url('storage/'.$post->image)}}" alt="">
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
