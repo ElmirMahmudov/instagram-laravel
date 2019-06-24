@@ -49,9 +49,11 @@
     <div class="row pt-5 pb-5">
         @foreach ($user->posts as $post)
             <div class="imgCont col-4 pb-4">
-                <img
-                    class="w-100"
-                    src="{{url('storage/'.$post->image)}}" alt="">
+                <a href="/p/{{$post->id}}">
+                    <img
+                        class="w-100"
+                        src="{{url('storage/'.$post->image)}}" alt="">
+                </a>
             </div>
         @endforeach
     </div>
